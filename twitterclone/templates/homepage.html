@@ -1,0 +1,16 @@
+{% load crispy_forms_tags %}
+Homepage:
+<br>
+<form action='/addtweet/' method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type='submit' value='Click here to add a Tweet'>
+</form>
+
+{% for tweet in data %}
+{{ tweet.tweet_text }}
+<li><a href='/twitter_user/{{ tweet.tweet_by }}/'>{{ tweet.tweet_by }}</a></li>
+{% endfor %}
+
+
+{{ tweet.tweet_text }}

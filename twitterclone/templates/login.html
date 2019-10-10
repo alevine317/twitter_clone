@@ -1,0 +1,13 @@
+{% load crispy_forms_tags %}
+
+If you're a current user, log in here:
+<br>
+
+<form action='' method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Submit">
+</form>
+
+New users, sign up here:
+<a class="btn btn-outline-primary btn-lg btn-block" href="/signup/" role="button">Sign up</a>

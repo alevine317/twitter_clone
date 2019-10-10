@@ -1,0 +1,10 @@
+{% load crispy_forms_tags %}
+
+If you're a current user, log in here:
+<br>
+
+<form action='' method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Submit">
+</form>
