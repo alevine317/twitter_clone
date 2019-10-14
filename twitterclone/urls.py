@@ -25,17 +25,17 @@ from twitterclone.tweets.models import Tweet
 from twitterclone.twitterusers.models import TwitterUser
 from twitterclone.notifications.models import Notifications
 
-admin.site.register(Tweet)
-admin.site.register(TwitterUser)
-admin.site.register(Notifications)
+# admin.site.register(Tweet)
+# admin.site.register(TwitterUser)
+# admin.site.register(Notifications)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/login/', auth_views.login_view, name='index'),
     path('logout/', auth_views.logout_view),
     path('addtweet/', tweet_views.tweet_add),
-    path('signup/', twitteruser_views.signup_view),
-    path('', twitteruser_views.homepage, name='homepage'),
+    path('signup/', twitteruser_views.SignupView),
+    path('', twitteruser_views.Homepage, name='homepage'),
     path('tweet/<int:id>/', tweet_views.tweet),
-    path('twitter_user/<str:username>/', twitteruser_views.profile_view)
+    path('twitter_user/<str:username>/', twitteruser_views.ProfileView)
 ]
