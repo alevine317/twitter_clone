@@ -22,7 +22,7 @@ def tweet_add(request):
         if form.is_valid():
             data = form.cleaned_data
 #username=request.user.twitteruser, 
-            new_tweet = Tweet.objects.create(tweet_text=data['tweet_text'])
+            new_tweet = Tweet.objects.create(tweet_text=data['tweet_text'], tweet_by=request.user.twitteruser)
             return render(request, 'homepage.html', {'new_tweet': new_tweet})
 
     else:

@@ -11,6 +11,8 @@ Homepage:
 {{ tweet.tweet_text }}
 <li><a href='/twitter_user/{{ tweet.tweet_by }}/'>{{ tweet.tweet_by }}</a></li>
 {% endfor %}
-
-
-{{ tweet.tweet_text }}
+<h3>Users:</h3>
+{% for alluser in all_users %}
+{{ alluser }}
+<a href="follow/{{ alluser }}">Follow</a><br>
+{% endfor %}

@@ -6,7 +6,7 @@ class TwitterUser(models.Model):
     tag = models.CharField(max_length=50)
     person = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField()
-    # following = models.ManyToManyField("self")
+    following = models.ManyToManyField("self", blank=True, null=True)
 
     def __str__(self):
         return self.tag
