@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import reverse, render
-from twitterclone.authentication.forms import LoginForm
+from .forms import LoginForm
 
 
 def login_view(request):

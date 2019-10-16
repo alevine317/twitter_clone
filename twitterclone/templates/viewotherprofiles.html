@@ -1,0 +1,9 @@
+{% load crispy_forms_tags %}
+{{ u }}
+<br>
+
+
+{% for tweet in tweets %}
+{{ tweet.tweet_text }}
+<li><a href='/twitter_user/{{ tweet.tweet_by }}/'>{{ tweet.tweet_by }}</a></li>
+{% endfor %}
